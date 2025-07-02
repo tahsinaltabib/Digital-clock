@@ -1,0 +1,51 @@
+@media (min-width:320px) and (max-width:575.99px){
+    .hero .container{
+        width: 215px;
+    }
+
+    .hero .clock span{
+	font-size: 30px;
+	width: 110px;
+	display: inline-block;
+	text-align: center;
+	position: relative;
+}
+
+.hero .container::before {
+	content: '';
+	width: 113px;
+	height: 80px;
+	background: #f41b75;
+	border-radius: 5px;
+	position: absolute;
+	left: -43px;
+	top: -25px;
+	z-index: -1;
+}
+.hero .clock {
+	width: 92%;
+	height: 67%;
+	background: rgba(235, 0, 235, 0.11);
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	backdrop-filter: blur(40px);
+    padding: 20px;
+}
+
+.hero .container::after {
+	content: '';
+	width: 100px;
+	height: 100px;
+	background: #419aff;
+	border-radius: 50%;
+	position: absolute;
+	right: -28px;
+	bottom: 18px;
+	z-index: -1;
+}
+
+
+
+}
