@@ -1,9 +1,26 @@
-let hrs = document.getElementById("hrs")
-    let min = document.getElementById("min")
-    let sec = document.getElementById("sec")
+let hrs = document.querySelector("#hrs");
+let min = document.querySelector("#min");
+let sec = document.querySelector("#sec");
 
-    let currentTime = new Data();
+function formatTime(value) {
+  return value < 10 ? "0" + value : value;
+}
 
-    hrs.innerHTML = currentTime.getHours();
-    min.innerHTML = currentTime.getMinutes();
-    sec.innerHTML = currentTime.getSeconds();
+function watch() {
+  let date = new Date();
+
+  let hformet = date.getHours();
+  let mformet = date.getMinutes();
+  let sformet = date.getSeconds();
+
+  // 12-hour korar jonno
+    hformet = hformet % 12;
+    hformet = hformet === 0 ? 12 : hformet;
+  // 0 hole 12 dekanur jonno
+
+  hrs.innerHTML = formatTime(hformet);
+  min.innerHTML = formatTime(mformet);
+  sec.innerHTML = formatTime(sformet);
+}
+
+setInterval(watch, 1000);
